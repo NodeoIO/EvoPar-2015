@@ -70,7 +70,24 @@ shown in \cite{gong2015distributed}. Besides the well known and tested
 master-slave and island models, new models such as the pool-based
 evolutionary algorithms
 \cite{roy2009distributed,bollini1999distributed,sofea:evopar2012,sofea:naco}
-have arisen and been used in volunteer computing experiments
+have arisen. A pool-based evolutionary algorithms decouple population
+from the algorithm by creating a persistent pool, that can be any kind
+of server or database where individuals in different states, evaluated
+or not, can be accessed. Unlike island or master-slave architectures,
+the pool-based architecture lends itself to all kinds of interaction
+with the algorithm, storing the whole population in the pool that is
+fetched by clients and returned with some operations like fitness
+calculation or a single generation performed
+\cite{nogueras2015self,garcia2014unreliable} or storing and fetching some
+individuals selected from the clients or the server
+\cite{DBLP:conf/3pgcic/GuervosMFEL12}. Any and all modes of
+interaction with the pool can be mixed, creating a configuration space
+that is difficult to explore.
+
+However, the pool based architecture with its topology-free and
+asynchronous nature does have the advantage of
+allowing spontaneous incorporation by just interacting with the pool
+and thus been used in volunteer computing experiments
 \cite{daniel:euromicro09,DBLP:journals/corr/abs-0801-1210,DBLP:journals/gpem/LaredoBGVAGF14}. As
 this last paper shows, designing robust algorithms is an issue, but
 predicting the performance is also a big challenge.
@@ -80,14 +97,32 @@ performance: how many fitness evaluations are needed to reach the
 solution. Since the scenario is dynamic and asynchronous it is first
 complicated to design an experiment that covers a wide range of
 possible situations, although some attempts have been made changing
-the population structure \cie{DBLP:conf/lion/LaredoGFMACG11},
+the population structure \cite{DBLP:conf/lion/LaredoGFMACG11},
 migration schemes \cite{hijaze2014investigating} or sampling
 strategies \cite{nogueras2015self}. 
 
+The second component is the scaling capabilities and the actual number
+of nodes gathered for a single experiment. This component of the
+performance is heavily influenced by the social network the experiment
+is embedded in, and heavily related to the attitude of the user
+towards lending time to a web page that is running an experiment. Some
+advances on the statistical distribution of users and how this is
+influenced by several factors has been presented so far
+DBLP:journals/corr/GuervosG15, however, this facet of performance has
+not been related to the first one.
+
+In this paper we will try to make first an algorithmic study of the
+performance of these algorithms to establish a baseline for pool-based
+volunteer
+computing experiments; we will also try to make some inroads into what
+kind of experiments are suitable for a volunteer computing set
+up. Then we will measure the performance in a real volunteer computing
+experiment. This will be done next. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Methodology} %Issue #12
+\section{Methodology} 
 \label{sec:met}
 
 
@@ -118,7 +153,7 @@ Space
 
 
 \bibliographystyle{splncs}
-\bibliography{geneura,volunteer}
+\bibliography{geneura-latin1,volunteer}
 
 \end{document}
 %%% Local Variables:
