@@ -14,7 +14,8 @@
 
 \mainmatter  
 
-\title{The importance of diversity in distributed asynchronous evolutionary algorithms} 
+\title{The importance of diversity in distributed and asynchronous
+  evolutionary algorithms}  
 
 \titlerunning{The importante of diversity}
 
@@ -62,6 +63,26 @@ present our conclusions to finish the paper.
 
 \section{State of the Art}
 \label{sec:sota}
+
+In the last few years, the scenario of distributed computing has
+evolved from rigid, synchronous and static setups to fluid, asynchronous and dynamic ones, as
+shown in \cite{gong2015distributed}. Besides the well known and tested
+master-slave and island models, new models such as the pool-based
+evolutionary algorithms
+\cite{roy2009distributed,bollini1999distributed,sofea:evopar2012,sofea:naco}
+have arisen and been used in volunteer computing experiments
+\cite{daniel:euromicro09,DBLP:journals/corr/abs-0801-1210,DBLP:journals/gpem/LaredoBGVAGF14}. As
+this last paper shows, designing robust algorithms is an issue, but
+predicting the performance is also a big challenge.
+
+This performance has two components. The first is the algorithmic
+performance: how many fitness evaluations are needed to reach the
+solution. Since the scenario is dynamic and asynchronous it is first
+complicated to design an experiment that covers a wide range of
+possible situations, although some attempts have been made changing
+the population structure \cie{DBLP:conf/lion/LaredoGFMACG11},
+migration schemes \cite{hijaze2014investigating} or sampling
+strategies \cite{nogueras2015self}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
